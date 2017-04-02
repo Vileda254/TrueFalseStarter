@@ -10,7 +10,6 @@ import UIKit
 import GameKit
 import AudioToolbox
 
-@available(iOS 10.0, *)
 class ViewController: UIViewController {
     
     let questionsPerRound = 10
@@ -21,10 +20,8 @@ class ViewController: UIViewController {
     var gameSound: SystemSoundID = 0
     var myTimer = Timer()
     var secondsOnTimer = 15
-    
 
     let trivia = processQuestionData(from: initialData)
-
 
     @IBOutlet var answerOptions: [UIButton]!
     @IBOutlet var timerLables: [UILabel]!
