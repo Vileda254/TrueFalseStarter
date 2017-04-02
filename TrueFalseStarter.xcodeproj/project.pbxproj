@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A653D521E9124B30009C67B /* GameSoundCorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A653D501E9124B30009C67B /* GameSoundCorrect.wav */; };
+		0A653D531E9124B30009C67B /* GameSoundWrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0A653D511E9124B30009C67B /* GameSoundWrong.wav */; };
 		0A87826F1E6AF560002CDC84 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A87826E1E6AF560002CDC84 /* Question.swift */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
 		97093D3E1C913506001275BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A653D501E9124B30009C67B /* GameSoundCorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameSoundCorrect.wav; sourceTree = "<group>"; };
+		0A653D511E9124B30009C67B /* GameSoundWrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameSoundWrong.wav; sourceTree = "<group>"; };
 		0A87826E1E6AF560002CDC84 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* TrueFalseStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueFalseStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093D3B1C913506001275BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				97093D441C913506001275BC /* LaunchScreen.storyboard */,
 				97093D471C913506001275BC /* Info.plist */,
 				97093D521C932116001275BC /* GameSound.wav */,
+				0A653D501E9124B30009C67B /* GameSoundCorrect.wav */,
+				0A653D511E9124B30009C67B /* GameSoundWrong.wav */,
 				0A87826E1E6AF560002CDC84 /* Question.swift */,
 			);
 			path = TrueFalseStarter;
@@ -132,7 +138,9 @@
 			files = (
 				97093D531C932116001275BC /* GameSound.wav in Resources */,
 				97093D461C913506001275BC /* LaunchScreen.storyboard in Resources */,
+				0A653D531E9124B30009C67B /* GameSoundWrong.wav in Resources */,
 				97093D431C913506001275BC /* Assets.xcassets in Resources */,
+				0A653D521E9124B30009C67B /* GameSoundCorrect.wav in Resources */,
 				97093D411C913506001275BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
