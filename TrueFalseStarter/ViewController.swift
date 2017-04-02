@@ -149,6 +149,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgain() {
+        toggleLabelsVisibility(labels: timerLables, visible: true)
         questionsAsked = 0
         correctQuestions = 0
         // Empty random used indexes array
