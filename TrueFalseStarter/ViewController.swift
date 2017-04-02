@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var indexOfSelectedQuestion: Int = 0
     var usedIndexes = [Int] ()
     var gameSound: SystemSoundID = 0
+    var gameSoundCorrect: SystemSoundID = 1
+    var gameSoundWrong: SystemSoundID = 2
     var myTimer = Timer()
     var secondsOnTimer = 15
 
@@ -42,6 +44,8 @@ class ViewController: UIViewController {
         
         // Hide play again button
         playAgainButton.isHidden = true
+        loadCorrectAnswerSound()
+        loadWrongAnswerSound()
         displayQuestion()
     }
     override func didReceiveMemoryWarning() {
@@ -105,9 +109,11 @@ class ViewController: UIViewController {
             correctQuestions += 1
             questionField.text = "Correct!"
             sender.backgroundColor = UIColor(red:0.09,green:0.67,blue:0.15,alpha:1.00)
+            playCorrectAnswerSound()
         } else {
             questionField.text = "Sorry, the correct answer is: \n\(correctAnswer)"
             sender.backgroundColor = UIColor(red:0.83,green:0.08,blue:0.08,alpha:1.00)
+            playWrondAnswerSound()
         }
         
         // End countdown timer
@@ -236,6 +242,7 @@ class ViewController: UIViewController {
             timerLabel.text = "0"
             questionField.text = "Sorry your time has run out."
             toggleButtonsEnabledState(buttons: answerOptions, enabled: false)
+            playWrondAnswerSound()
             questionsAsked += 1
             myTimer.invalidate()
             loadNextRoundWithDelay(seconds: 2)
@@ -248,8 +255,28 @@ class ViewController: UIViewController {
         AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameSound)
     }
     
+    func loadCorrectAnswerSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "GameSoundCorrect", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameSoundCorrect)
+    }
+    
+    func loadWrongAnswerSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "GameSoundWrong", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameSoundWrong)
+    }
+    
     func playGameStartSound() {
         AudioServicesPlaySystemSound(gameSound)
+    }
+    
+    func playCorrectAnswerSound() {
+        AudioServicesPlaySystemSound(gameSoundCorrect)
+    }
+    
+    func playWrondAnswerSound() {
+        AudioServicesPlaySystemSound(gameSoundWrong)
     }
 }
 
